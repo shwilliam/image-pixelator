@@ -1,0 +1,23 @@
+{
+  "name": "img2palette",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shwilliam/img2palette.git"
+  },
+  "keywords": [
+    "color",
+    "palette"
+  ],
+  "author": "William L <w-lindvall@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shwilliam/img2palette/issues"
+  },
+  "homepage": "https://github.com/shwilliam/img2palette#readme"
+}
