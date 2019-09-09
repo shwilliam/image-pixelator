@@ -9,8 +9,17 @@
 </head>
 <body>
   <header>
-    <input id="input-img" type="file">
-    <button type="button" id="btn-resize">generate palette</button> 
+    <label class="input-label">
+      Select an image:
+      <input id="input-img" type="file">
+    </label>
+
+    <label class="input-label">
+      Amount of colors:
+      <input id="input-detail" type="range" min="1" max="20" step="1">
+    </label>
+
+    <button id="btn-resize" type="button">generate palette</button> 
   </header>
 
   <main>

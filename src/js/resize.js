@@ -3,14 +3,14 @@ import getImgColors from './getImgColors'
 // TODO: move this
 const infoContainer = document.getElementById('pixel-info')
 
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
+const componentToHex = c => {
+  const hex = c.toString(16)
+  return hex.length == 1 ? '0' + hex : hex
 }
 
-function rgbToHex({r, g, b}) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
+// FIXME: instead use rgb color
+const rgbToHex = ({r, g, b, a}) => `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}${componentToHex(a)}`
+
 
 export default (file, output, detail) => {
   const img = document.createElement('img')
@@ -63,10 +63,15 @@ export default (file, output, detail) => {
       pixelInfoRow.classList.add('pixel-info__row')
 
       row.forEach(pixel => {
+        const pixelInfoWrapper = document.createElement('div')
+        pixelInfoWrapper.classList.add('pixel-info__item-wrapper')
+
         const pixelInfo = document.createElement('p')
         pixelInfo.classList.add('pixel-info__item')
         pixelInfo.innerText = rgbToHex(pixel)
-        pixelInfoRow.appendChild(pixelInfo)
+
+        pixelInfoWrapper.appendChild(pixelInfo)
+        pixelInfoRow.appendChild(pixelInfoWrapper)
       })
 
       infoContainer.appendChild(pixelInfoRow)
