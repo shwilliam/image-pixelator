@@ -1,0 +1,31 @@
+:root {
+  --base-length: 400px;
+}
+
+.palette {
+  width: var(--base-length);
+  height: var(--base-length);
+
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.pixel-info {
+  position: absolute;
+  width: var(--base-length);
+  height: var(--base-length);
+  display: flex;
+  flex-direction: column;
+}
+
+.pixel-info__row {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pixel-info__item {
+  font-weight: bold;
+  background-color: #fff;
+}

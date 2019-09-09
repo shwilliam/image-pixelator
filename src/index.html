@@ -5,24 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>img2palette</title>
-  <style>
-    img {
-      width: 400px;
-      height: 400px;
-
-      image-rendering: crisp-edges;
-      image-rendering: pixelated;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
   <header>
     <input id="input-img" type="file">
-    <button type="button" id="btn-resize">resize</button> 
+    <button type="button" id="btn-resize">generate palette</button> 
   </header>
 
   <main>
-    <img id="output">
+    <div id="pixel-info" class="pixel-info"></div>
+    <img id="palette" class="palette">
+    <canvas id="canvas" hidden></canvas>
   </main>
 
 
