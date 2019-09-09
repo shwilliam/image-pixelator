@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>img2palette</title>
+  <style>
+    img {
+      width: 400px;
+      height: 400px;
+
+      image-rendering: crisp-edges;
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <input id="input-img" type="file">
+    <button type="button" id="btn-resize">resize</button> 
+  </header>
+
+  <main>
+    <img id="output">
+  </main>
+
+
+  <script src="./js/index.js"></script>
+</body>
+</html>
