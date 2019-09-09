@@ -24,5 +24,8 @@
   "homepage": "https://github.com/shwilliam/img2palette#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
   }
 }

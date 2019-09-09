@@ -14,7 +14,7 @@
   image-rendering: pixelated;
 }
 
-.pixel-info {
+.palette__overlay {
   position: absolute;
   width: var(--base-length);
   height: var(--base-length);
