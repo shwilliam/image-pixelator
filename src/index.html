@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>img2palette</title>
-  <link rel="stylesheet" href="./style.css" type="text/css" />
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="./style.css" type="text/css" />
 </head>
 <body>
   <header>
@@ -17,7 +17,7 @@
 
     <label class="input-label">
       Amount of colors:
-      <input id="input-detail" type="range" min="2" max="20" step="1">
+      <input id="input-detail" type="range" value="3" min="2" max="20" step="1">
     </label>
 
     <button id="btn-resize" type="button">generate palette</button> 
@@ -25,7 +25,7 @@
 
   <main>
     <div id="palette__overlay" class="palette__overlay"></div>
-    <img id="palette" class="palette">
+    <img id="palette" class="palette" hidden>
   </main>
 
   <footer>

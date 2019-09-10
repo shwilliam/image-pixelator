@@ -1,1 +1,4 @@
-export default (el, url) => el.src = url
+export default (el, url) => {
+  el.src = url
+  el.hidden = false
+}
