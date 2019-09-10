@@ -5,6 +5,7 @@ export default (file, detail) =>
 
     reader.readAsDataURL(file)
 
+    // override on load listener if retriggered
     reader.onload = e => {
       img.src = e.target.result
 

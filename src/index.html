@@ -9,26 +9,73 @@
   <link rel="stylesheet" href="./style.css" type="text/css" />
 </head>
 <body>
-  <header>
+  <header class="header">
+    <img class="header__image" src="./artist-palette.png" />
+    <h1 class="header__title">img2palette</h1>
+  </header>
+
+  <main class="main">
     <label class="input-label">
       Select an image:
       <input id="input-img" type="file">
     </label>
 
-    <label class="input-label">
-      Amount of colors:
-      <input id="input-detail" type="range" value="3" min="2" max="20" step="1">
-    </label>
+    <div id="input-detail__container"> 
+      <label class="input-label" aria-hidden>
+        Detail:
+      </label>
+
+      <label
+        for="input-detail__action-decrement"
+        class="sr-only"
+      >
+        Decrement detail
+      </label>
+      <button
+        id="input-detail__action-decrement"
+        class="input-detail__action"
+        value="decrement"
+        type="submit"
+      >
+        -
+      </button>
+
+      <p
+        id="input-detail__value"
+        class="input-detail__value"
+        role="range"
+        aria-valuenow="3" 
+        aria-valuemin="2"
+        aria-valuemax="20"
+      >
+        3
+      </p>
+
+      <label
+        for="input-detail__action-decrement"
+        class="sr-only"
+      >
+        Decrement detail
+      </label>
+      <button
+        id="input-detail__action-decrement"
+        class="input-detail__action"
+        value="increment"
+        type="submit"
+      >
+        +
+      </button>
+    </div>
 
     <button id="btn-resize" type="button">generate palette</button> 
-  </header>
 
-  <main>
-    <div id="palette__overlay" class="palette__overlay"></div>
-    <img id="palette" class="palette" hidden>
+    <div class="palette__wrapper">
+      <div id="palette__overlay" class="palette__overlay"></div>
+      <img id="palette" class="palette">
+    </div>
   </main>
 
-  <footer>
+  <footer class="footer">
     <a
       href="https://github.com/shwilliam/img2palette"
       target="_blank"

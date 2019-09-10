@@ -1,4 +1,4 @@
 export default (el, url) => {
   el.src = url
-  el.hidden = false
+  el.style.display = 'initial'
 }

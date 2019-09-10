@@ -1,15 +1,71 @@
 :root {
   --base-length: 400px;
+  --base-color__ui: #ccc;
+  --base-font: sans-serif;
 }
 
-.input-label {
-  display: block;
+html, body {
+  font-family: var(--base-font);
+}
+
+button, input {
+  font: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  left: -9999px;
+  top: -9999px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header__image {
+  height: 3rem;
+  width: 3rem;
+}
+
+.header__title {
+  margin-top: 0;
+}
+
+.main, .footer {
+  width: var(--base-length);
+  margin: 0 auto;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.input-detail__value {
+  display: inline-block;
+}
+
+.input-detail__action {
+  padding: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.palette__wrapper {
+  position: relative;
 }
 
 .palette {
+  display: none;
   width: var(--base-length);
   height: var(--base-length);
+  border: 4px dashed var(--base-color__ui);
 
+  /* pixelate */
   image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
@@ -20,6 +76,7 @@
   height: var(--base-length);
   display: flex;
   flex-direction: column;
+  display: none;
 }
 
 .pixel-info__row {
