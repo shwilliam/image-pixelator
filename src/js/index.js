@@ -1,9 +1,6 @@
 import 'babel-polyfill'
 
-import resize from './resize'
-import getPixelVals from './getPixelVals'
-import renderPalette from './renderPalette'
-import renderPixelInfo from './renderPixelInfo'
+import generatePalette from './generatePalette'
 import renderDetailValue from './renderDetailValue'
 
 const output = document.getElementById('palette')
@@ -34,16 +31,22 @@ detailInputContainer.addEventListener(
     }
 
     renderDetailValue(detailInputValue, newVal)
+    generatePalette(
+      output,
+      outputOverlay,
+      fileInput.files[0],
+      parseInt(detailInputValue.getAttribute('aria-valuenow'))
+    )
   }
 )
 
-document.getElementById('btn-resize').addEventListener(
-  'click',
-  async () => {
-    const detail = parseInt(detailInputValue.getAttribute('aria-valuenow'))
-    const canvas = await resize(fileInput.files[0], detail)
-    const pixelVals = getPixelVals(canvas, detail)
-    renderPalette(output, canvas.toDataURL('image/png'))
-    renderPixelInfo(outputOverlay, pixelVals)
-  }
+fileInput.addEventListener(
+  'change',
+  () => generatePalette(
+    output,
+    outputOverlay,
+    fileInput.files[0],
+    parseInt(detailInputValue.getAttribute('aria-valuenow'))
+  )
 )
+

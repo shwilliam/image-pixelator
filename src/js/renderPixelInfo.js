@@ -7,7 +7,7 @@ const componentToHex = c => {
 const rgbToHex = ({r, g, b, a}) => `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}${a === 255 ? '' : componentToHex(a)}`
 
 export default (el, pixelVals) => {
-  el.style.display = 'initial'
+  el.style.display = 'flex'
   el.innerHTML = ''
   pixelVals.forEach(row => {
     const pixelInfoRow = document.createElement('div')
