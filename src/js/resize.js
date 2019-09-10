@@ -8,14 +8,16 @@ export default (file, detail) =>
     reader.onload = e => {
       img.src = e.target.result
 
-      const canvas = document.createElement('canvas')
-      const ctx = canvas.getContext('2d')
+      img.onload = () => {
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
 
-      canvas.width = detail
-      canvas.height = detail
-      ctx.drawImage(img, 0, 0, detail, detail)
-      
-      res(canvas)
+        canvas.width = detail
+        canvas.height = detail
+        ctx.drawImage(img, 0, 0, detail, detail)
+
+        res(canvas)
+      }
     }
   })
 
