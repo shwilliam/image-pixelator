@@ -1,5 +1,5 @@
-export default (file, detail) => 
-  new Promise((res, rej) => {
+export default (file, detail) =>
+  new Promise(res => {
     const img = document.createElement('img')
     const reader = new FileReader()
 
@@ -21,4 +21,3 @@ export default (file, detail) =>
       }
     }
   })
-

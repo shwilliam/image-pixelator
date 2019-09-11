@@ -6,9 +6,9 @@ export default (canvas, detail) => {
   const allPixelVals = []
   for (let i = 0; i < data.length; i += 4) {
     const r = data[i]
-    const g = data[i+1]
-    const b = data[i+2]
-    const a = data[i+3]
+    const g = data[i + 1]
+    const b = data[i + 2]
+    const a = data[i + 3]
     allPixelVals.push({r, g, b, a})
   }
 

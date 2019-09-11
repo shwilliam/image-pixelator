@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/shwilliam/img2palette#readme",
   "devDependencies": {
+    "eslint": "^6.3.0",
     "parcel-bundler": "^1.12.3"
   },
   "dependencies": {

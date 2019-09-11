@@ -4,7 +4,10 @@ const componentToHex = c => {
 }
 
 // FIXME: instead use rgb color
-const rgbToHex = ({r, g, b, a}) => `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}${a === 255 ? '' : componentToHex(a)}`
+const rgbToHex = ({r, g, b, a}) =>
+  `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}${
+    a === 255 ? '' : componentToHex(a)
+  }`
 
 export default (el, pixelVals) => {
   el.style.display = 'flex'
