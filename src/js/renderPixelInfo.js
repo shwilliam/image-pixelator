@@ -10,7 +10,6 @@ const rgbToHex = ({r, g, b, a}) =>
   }`
 
 export default (el, pixelVals) => {
-  el.style.display = 'flex'
   el.innerHTML = ''
   pixelVals.forEach(row => {
     const pixelInfoRow = document.createElement('div')

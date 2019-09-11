@@ -8,4 +8,5 @@ export default async (el, overlay, file, detail) => {
   const pixelVals = getPixelVals(canvas, detail)
   renderPalette(el, canvas.toDataURL('image/png'))
   renderPixelInfo(overlay, pixelVals)
+  return file
 }

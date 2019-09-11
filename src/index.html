@@ -15,15 +15,6 @@
   </header>
 
   <main class="main">
-    <label class="input-label">
-      Select an image:
-      <input
-        id="input-img"
-        accept="image/x-png,image/jpeg"
-        type="file"
-      >
-    </label>
-
     <div id="input-detail__container"> 
       <label class="input-label" aria-hidden>
         Detail:
@@ -71,10 +62,24 @@
       </button>
     </div>
 
-    <div class="palette__wrapper">
-      <div id="palette__overlay" class="palette__overlay"></div>
-      <img id="palette" class="palette">
-    </div>
+    <form id="form-img" class="form-img" action="">
+      <label class="input-label">
+        <div id="palette__overlay" class="palette__overlay">
+          <p id="form-img__label" class="form-img__label">
+            Drop your image here
+          </p>
+        </div>
+
+        <img id="palette" class="palette">
+
+        <input
+          id="form-img__input"
+          class="sr-only"
+          accept="image/x-png,image/jpeg"
+          type="file"
+        >
+      </label>
+    </form>
   </main>
 
   <footer class="footer">
