@@ -1,34 +1,51 @@
 import 'babel-polyfill'
 
-import generatePalette from './generatePalette'
-import renderDetailValue from './renderDetailValue'
-import createDropzone from './createDropzone'
+import renderDropzone from './renderDropzone'
+import renderPalette from './renderPalette'
 
-const output = document.getElementById('palette')
-const outputOverlay = document.getElementById('palette__overlay')
+// image dropzone
+const fileInput = document.getElementById('form-img__input')
+const fileInputForm = document.getElementById('form-img')
+const fileInputLabel = document.getElementById('form-img__label')
 const detailInputContainer = document.getElementById(
   'input-detail__container',
 )
+
+// palette els
+const output = document.getElementById('palette')
+const outputOverlay = document.getElementById('palette__overlay')
 const detailInputValue = document.getElementById(
   'input-detail__value',
 )
-const fileInputForm = document.getElementById('form-img')
-const fileInput = document.getElementById('form-img__input')
-const fileInputLabel = document.getElementById('form-img__label')
 
-createDropzone(fileInputForm, fileInputLabel, file =>
-  generatePalette(
+let draggedFile
+renderDropzone(fileInputForm, fileInputLabel, file => {
+  draggedFile = file
+  renderPalette(
     output,
     outputOverlay,
     file,
     parseInt(detailInputValue.getAttribute('aria-valuenow')),
-  ),
-)
+  )
+})
 
-renderDetailValue(
-  detailInputValue,
+detailInputValue.setAttribute(
+  'aria-valuenow',
   detailInputValue.getAttribute('aria-valuenow'),
 )
+detailInputValue.innerText = detailInputValue.getAttribute(
+  'aria-valuenow',
+)
+
+fileInput.addEventListener('change', () => {
+  draggedFile = null
+  renderPalette(
+    output,
+    outputOverlay,
+    fileInput.files[0],
+    parseInt(detailInputValue.getAttribute('aria-valuenow')),
+  )
+})
 
 detailInputContainer.addEventListener('click', e => {
   e.preventDefault()
@@ -49,20 +66,13 @@ detailInputContainer.addEventListener('click', e => {
       break
   }
 
-  renderDetailValue(detailInputValue, newVal)
-  generatePalette(
+  detailInputValue.setAttribute('aria-valuenow', newVal)
+  detailInputValue.innerText = newVal
+
+  renderPalette(
     output,
     outputOverlay,
-    output.src || fileInput.files[0],
+    draggedFile || fileInput.files[0],
     parseInt(detailInputValue.getAttribute('aria-valuenow')),
   )
 })
-
-fileInput.addEventListener('change', () =>
-  generatePalette(
-    output,
-    outputOverlay,
-    fileInput.files[0],
-    parseInt(detailInputValue.getAttribute('aria-valuenow')),
-  ),
-)

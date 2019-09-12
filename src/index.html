@@ -10,64 +10,90 @@
 </head>
 <body>
   <header class="header">
+
     <img class="header__image" src="./artist-palette.png" />
+
     <h1 class="header__title">img2palette</h1>
+
+    <nav>
+      <a
+        class="header__nav-item"
+        href="https://github.com/shwilliam/img2palette/issues"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        issues
+      </a>
+      <a
+        class="header__nav-item"
+        href="https://github.com/shwilliam/img2palette"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        source
+      </a>
+    </nav>
+
   </header>
 
   <main class="main">
-    <div id="input-detail__container"> 
-      <label class="input-label" aria-hidden>
-        Detail:
-      </label>
 
-      <label
-        for="input-detail__action-decrement"
-        class="sr-only"
-      >
-        Decrement detail
-      </label>
-      <button
-        id="input-detail__action-decrement"
-        class="input-detail__action"
-        value="decrement"
-        type="submit"
-      >
-        -
-      </button>
+    <p class="main__description">
+      <span class="bold">
+        Quickly view the dominant colors of any image.
+      </span>
+      To get started, select an image by clicking below. Hover over one of the colors to display the 8-digit HEX code and click on it to copy the code to your clipboard!
+    </p>
 
-      <p
-        id="input-detail__value"
-        class="input-detail__value"
-        role="range"
-        aria-valuenow="3" 
-        aria-valuemin="2"
-        aria-valuemax="20"
-      >
-        3
-      </p>
+    <div id="input-detail__container" class="input-detail__container"> 
+      <span class="input-detail__actions">
+        <label
+          for="input-detail__action-decrement"
+          class="sr-only"
+        >
+          Decrement detail
+        </label>
+        <button
+          id="input-detail__action-decrement"
+          class="input-detail__action"
+          value="decrement"
+          type="submit"
+        >
+          −
+        </button>
 
-      <label
-        for="input-detail__action-decrement"
-        class="sr-only"
-      >
-        Decrement detail
-      </label>
-      <button
-        id="input-detail__action-decrement"
-        class="input-detail__action"
-        value="increment"
-        type="submit"
-      >
-        +
-      </button>
-    </div>
+        <p
+          id="input-detail__value"
+          class="input-detail__value"
+          role="range"
+          aria-valuenow="3" 
+          aria-valuemin="2"
+          aria-valuemax="20"
+        >
+          3
+        </p>
 
-    <form id="form-img" class="form-img" action="">
+        <label
+          for="input-detail__action-decrement"
+          class="sr-only"
+        >
+          Increment detail
+        </label>
+        <button
+          id="input-detail__action-decrement"
+          class="input-detail__action"
+          value="increment"
+          type="submit"
+        >
+          +
+        </button>
+      </div>
+    </span>
+
+    <form id="form-img" name="form-img" class="form-img" action="">
       <label class="input-label">
         <div id="palette__overlay" class="palette__overlay">
-          <p id="form-img__label" class="form-img__label">
-            Drop your image here
-          </p>
+          <p id="form-img__label" class="form-img__label"></p>
         </div>
 
         <img id="palette" class="palette">
@@ -80,17 +106,8 @@
         >
       </label>
     </form>
-  </main>
 
-  <footer class="footer">
-    <a
-      href="https://github.com/shwilliam/img2palette"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-        source
-    </a>
-  </footer>
+  </main>
 
   <script src="./js/index.js"></script>
 </body>

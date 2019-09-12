@@ -1,4 +1,6 @@
 export default (el, label, onDrop) => {
+  label.innerHTML = 'Drag and drop or click here to select an image'
+
   // prevent default drag behaviors
   // eslint-disable-next-line
   ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(
@@ -14,10 +16,8 @@ export default (el, label, onDrop) => {
   ;['dragenter', 'dragover'].forEach(eventName => {
     el.addEventListener(eventName, onDragEnter, false)
   })
-  ;['dragleave', 'drop'].forEach(eventName => {
-    el.addEventListener(eventName, onDragLeave, false)
-  })
 
+  el.addEventListener('dragleave', onDragLeave, false)
   el.addEventListener('drop', handleDrop, false)
 
   function preventDefaults(e) {
@@ -27,12 +27,12 @@ export default (el, label, onDrop) => {
 
   function onDragEnter() {
     if (!label) return
-    label.innerHTML = 'Drop here!'
+    label.innerHTML = 'Drop it!'
   }
 
   function onDragLeave() {
     if (!label) return
-    label.innerHTML = 'Drop your image here'
+    label.innerHTML = 'Drag and drop or click here to select an image'
   }
 
   function handleDrop(e) {
