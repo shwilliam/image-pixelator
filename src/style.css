@@ -211,5 +211,7 @@ a:nth-child(odd) {
 
 .pixel-info__item {
   position: absolute;
-  background-color: #ffffff;
+  padding: 0.6rem 0.4rem;
+  background-color: #fff;
+  background-color: #ffffff80;
 }

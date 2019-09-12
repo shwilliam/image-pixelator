@@ -16,12 +16,20 @@ export default (el, pixelVals) => {
     pixelInfoRow.classList.add('pixel-info__row')
 
     row.forEach(pixel => {
+      const colorVal = rgbToHex(pixel)
+
       const pixelInfoWrapper = document.createElement('div')
       pixelInfoWrapper.classList.add('pixel-info__item-wrapper')
 
       const pixelInfo = document.createElement('p')
       pixelInfo.classList.add('pixel-info__item')
-      pixelInfo.innerText = rgbToHex(pixel)
+      pixelInfo.innerText = colorVal
+      pixelInfo.onclick = e => {
+        e.preventDefault()
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(colorVal)
+        }
+      }
 
       pixelInfoWrapper.appendChild(pixelInfo)
       pixelInfoRow.appendChild(pixelInfoWrapper)
