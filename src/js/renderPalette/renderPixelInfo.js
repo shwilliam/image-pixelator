@@ -20,16 +20,16 @@ export default (el, pixelVals) => {
 
       const pixelInfoWrapper = document.createElement('div')
       pixelInfoWrapper.classList.add('pixel-info__item-wrapper')
-
-      const pixelInfo = document.createElement('p')
-      pixelInfo.classList.add('pixel-info__item')
-      pixelInfo.innerText = colorVal
-      pixelInfo.onclick = e => {
+      pixelInfoWrapper.onclick = e => {
         e.preventDefault()
         if (navigator.clipboard) {
           navigator.clipboard.writeText(colorVal)
         }
       }
+
+      const pixelInfo = document.createElement('p')
+      pixelInfo.classList.add('pixel-info__item')
+      pixelInfo.innerText = colorVal
 
       pixelInfoWrapper.appendChild(pixelInfo)
       pixelInfoRow.appendChild(pixelInfoWrapper)
