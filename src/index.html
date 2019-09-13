@@ -45,7 +45,7 @@
       To get started, select an image by clicking below. Hover over one of the colors to display the 8-digit HEX code and click on it to copy the code to your clipboard!
     </p>
 
-    <div id="input-detail__container" class="input-detail__container"> 
+    <div id="palette-actions__container" class="palette-actions__container"> 
       <span class="input-detail__actions">
         <label
           for="input-detail__action-decrement"
@@ -88,9 +88,21 @@
           +
         </button>
       </span>
+      <span>
+        <label for="form-img__alt-action" class="sr-only">
+          Upload new image
+        </label>
+        <button
+          id="form-img__alt-action"
+          class="form-img__alt-action"
+          type="button"
+        >
+          new image
+        </button>
+      </span>
     </div>
 
-    <form id="form-img" name="form-img" class="form-img" action="">
+    <form id="form-img" class="form-img" action="">
       <label class="input-label">
         <div id="palette__overlay" class="palette__overlay">
           <p id="form-img__label" class="form-img__label"></p>

@@ -3,19 +3,20 @@ import 'babel-polyfill'
 import renderDropzone from './renderDropzone'
 import renderPalette from './renderPalette'
 
-// image dropzone
+// image input
 const fileInput = document.getElementById('form-img__input')
 const fileInputForm = document.getElementById('form-img')
 const fileInputLabel = document.getElementById('form-img__label')
-const detailInputContainer = document.getElementById(
-  'input-detail__container',
-)
+const fileInputAltAction = document.getElementById('form-img__alt-action')
 
 // palette els
 const output = document.getElementById('palette')
 const outputOverlay = document.getElementById('palette__overlay')
 const detailInputValue = document.getElementById(
   'input-detail__value',
+)
+const paletteActionsContainer = document.getElementById(
+  'palette-actions__container',
 )
 
 let draggedFile
@@ -47,7 +48,7 @@ fileInput.addEventListener('change', () => {
   )
 })
 
-detailInputContainer.addEventListener('click', e => {
+paletteActionsContainer.addEventListener('click', e => {
   e.preventDefault()
   let newVal = parseInt(
     detailInputValue.getAttribute('aria-valuenow'),
@@ -75,4 +76,8 @@ detailInputContainer.addEventListener('click', e => {
     draggedFile || fileInput.files[0],
     parseInt(detailInputValue.getAttribute('aria-valuenow')),
   )
+})
+
+fileInputAltAction.addEventListener('click', () => {
+  fileInput.click()
 })

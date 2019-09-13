@@ -106,12 +106,14 @@ a:nth-child(odd) {
   display: none;
 }
 
-.input-detail__container {
+.palette-actions__container {
   width: var(--base-length);
   margin: 0 auto;
+  display: flex;
 }
 
-.input-detail__actions {
+.input-detail__actions,
+.form-img__alt-action {
   border: 4px dashed var(--base-color__ui);
   border-bottom: none;
   padding: 0.4rem 0.16rem;
@@ -137,6 +139,15 @@ a:nth-child(odd) {
   margin: 0 auto;
   background: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path d="M1 2V0h1v1H0v1z" fill-opacity=".025"/></svg>');
   background-size: 28px 28px;
+}
+
+.form-img__alt-action {
+  margin: 0;
+  padding: 0.4rem 0.85rem;
+  border-left: none;
+  line-height: 1.6;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .form-img__label {
