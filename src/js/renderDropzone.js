@@ -1,5 +1,5 @@
 export default (el, label, onDrop) => {
-  label.innerHTML = 'Drag and drop or click here to select an image'
+  label.innerText = 'Drag and drop or click here to select an image'
 
   // prevent default drag behaviors
   // eslint-disable-next-line
@@ -27,12 +27,12 @@ export default (el, label, onDrop) => {
 
   function onDragEnter() {
     if (!label) return
-    label.innerHTML = 'Drop it!'
+    label.innerText = 'Drop it!'
   }
 
   function onDragLeave() {
     if (!label) return
-    label.innerHTML = 'Drag and drop or click here to select an image'
+    label.innerText = 'Drag and drop or click here to select an image'
   }
 
   function handleDrop(e) {
