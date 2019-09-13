@@ -45,6 +45,23 @@
       To get started, select an image by clicking below. Hover over one of the colors to display the 8-digit HEX code and click on it to copy the code to your clipboard!
     </p>
 
+    <form id="form-img" class="form-img" action="">
+      <label class="input-label">
+        <div id="palette__overlay" class="palette__overlay">
+          <p id="form-img__label" class="form-img__label"></p>
+        </div>
+
+        <img id="palette" class="palette">
+
+        <input
+          id="form-img__input"
+          class="sr-only"
+          accept="image/x-png,image/jpeg"
+          type="file"
+        >
+      </label>
+    </form>
+
     <div id="palette-actions__container" class="palette-actions__container"> 
       <span class="input-detail__actions">
         <label
@@ -101,23 +118,6 @@
         </button>
       </span>
     </div>
-
-    <form id="form-img" class="form-img" action="">
-      <label class="input-label">
-        <div id="palette__overlay" class="palette__overlay">
-          <p id="form-img__label" class="form-img__label"></p>
-        </div>
-
-        <img id="palette" class="palette">
-
-        <input
-          id="form-img__input"
-          class="sr-only"
-          accept="image/x-png,image/jpeg"
-          type="file"
-        >
-      </label>
-    </form>
 
   </main>
 

@@ -110,17 +110,19 @@ a:nth-child(odd) {
   width: var(--base-length);
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
 }
 
 .input-detail__actions,
 .form-img__alt-action {
   border: 4px dashed var(--base-color__ui);
-  border-bottom: none;
-  padding: 0.4rem 0.16rem;
+  border-top: none;
+  padding: 0.4rem 0.3rem;
+  white-space: nowrap;
 }
 
 .input-detail__action {
-  padding: none;
+  padding: 0 0.4rem;
   background: none;
   font-size: 1.2rem;
   border: none;
@@ -142,9 +144,8 @@ a:nth-child(odd) {
 }
 
 .form-img__alt-action {
-  margin: 0;
-  padding: 0.4rem 0.85rem;
-  border-left: none;
+  margin: 0 1.2rem 0 0;
+  padding: 0.25rem 0.85rem;
   line-height: 1.6;
   background-color: transparent;
   cursor: pointer;
