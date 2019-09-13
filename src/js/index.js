@@ -8,6 +8,7 @@ const fileInput = document.getElementById('form-img__input')
 const fileInputForm = document.getElementById('form-img')
 const fileInputLabel = document.getElementById('form-img__label')
 const fileInputAltAction = document.getElementById('form-img__alt-action')
+const fileInputAltActionContainer = document.getElementById('form=img__alt-action-container')
 
 // palette els
 const output = document.getElementById('palette')
@@ -22,6 +23,7 @@ const paletteActionsContainer = document.getElementById(
 let draggedFile
 renderDropzone(fileInputForm, fileInputLabel, file => {
   draggedFile = file
+  fileInputAltActionContainer.hidden = false
   renderPalette(
     output,
     outputOverlay,
@@ -40,6 +42,7 @@ detailInputValue.innerText = detailInputValue.getAttribute(
 
 fileInput.addEventListener('change', () => {
   draggedFile = null
+  fileInputAltActionContainer.hidden = false
   renderPalette(
     output,
     outputOverlay,
