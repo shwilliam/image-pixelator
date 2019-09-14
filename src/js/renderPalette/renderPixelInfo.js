@@ -1,13 +1,6 @@
-const componentToHex = c => {
-  const hex = c.toString(16)
-  return hex.length == 1 ? '0' + hex : hex
-}
+import {rgbToHex, detectDesktop} from '../utils'
 
-// FIXME: instead use rgb color
-const rgbToHex = ({r, g, b, a}) =>
-  `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}${
-    a === 255 ? '' : componentToHex(a)
-  }`
+const isDesktop = detectDesktop()
 
 export default (el, pixelVals) => {
   el.innerHTML = ''
@@ -20,6 +13,8 @@ export default (el, pixelVals) => {
 
       const pixelInfoWrapper = document.createElement('div')
       pixelInfoWrapper.classList.add('pixel-info__item-wrapper')
+      if (!isDesktop && pixelVals.length < 4) pixelInfoWrapper.style.opacity = 1
+
       pixelInfoWrapper.onclick = e => {
         e.preventDefault()
         if (navigator.clipboard) {
