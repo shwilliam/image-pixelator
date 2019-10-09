@@ -1,4 +1,5 @@
 import {rgbToHex, detectDesktop} from '../utils'
+import CheeseToast from '../lib/cheese-toast'
 
 const isDesktop = detectDesktop()
 
@@ -13,12 +14,17 @@ export default (el, pixelVals) => {
 
       const pixelInfoWrapper = document.createElement('div')
       pixelInfoWrapper.classList.add('pixel-info__item-wrapper')
-      if (!isDesktop && pixelVals.length < 4) pixelInfoWrapper.style.opacity = 1
+      if (!isDesktop && pixelVals.length < 4)
+        pixelInfoWrapper.style.opacity = 1
 
       pixelInfoWrapper.onclick = e => {
         e.preventDefault()
         if (navigator.clipboard) {
           navigator.clipboard.writeText(colorVal)
+          new CheeseToast({
+            text: `${colorVal} copied to clipboard!`,
+            className: 'toast',
+          })
         }
       }
 

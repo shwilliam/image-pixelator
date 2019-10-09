@@ -221,3 +221,10 @@ a:nth-child(odd) {
   background-color: #fff;
   background-color: #ffffff80;
 }
+
+.toast {
+  width: 280px;
+  padding: 0.5rem;
+  background-color: #00f;
+  color: #fff;
+}
