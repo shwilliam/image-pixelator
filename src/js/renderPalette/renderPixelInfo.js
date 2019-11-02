@@ -13,6 +13,8 @@ export default (el, pixelVals) => {
       const colorVal = rgbToHex(pixel)
 
       const pixelInfoWrapper = document.createElement('div')
+      pixelInfoWrapper.setAttribute('role', 'button')
+      pixelInfoWrapper.setAttribute('tab-index', '0')
       pixelInfoWrapper.classList.add('pixel-info__item-wrapper')
       if (!isDesktop && pixelVals.length < 4)
         pixelInfoWrapper.style.opacity = 1
